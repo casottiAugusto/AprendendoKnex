@@ -1,5 +1,5 @@
 const database = require("./database");
-
+/*
 let dados = [
   {
     nome: "Monster Hunter World",
@@ -15,6 +15,24 @@ let dados = [
   }
 ]
 let query = database.insert(dados).into("games").then(data => {
+  console.log(data)
+}).catch(err => {
+  console.log(err)
+});
+*/
+/*
+database.select(["id","preco"]).table("games").then(data => {
+  console.log(data)
+}).catch(err => {
+  console.log(err)
+})
+*/
+let query = database.insert({nome :"Mists of noyah",preco:25}).into("games").then(data => {
+  database.select().table("games").then(data => {
+    console.log(data)
+  }).catch(err => {
+    console.log(err)
+  })
   console.log(data)
 }).catch(err => {
   console.log(err)
