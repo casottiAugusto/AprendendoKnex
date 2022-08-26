@@ -27,6 +27,7 @@ database.select(["id","preco"]).table("games").then(data => {
   console.log(err)
 })
 */
+/*
 let query = database.insert({nome :"Mists of noyah",preco:25}).into("games").then(data => {
   database.select().table("games").then(data => {
     console.log(data)
@@ -37,3 +38,23 @@ let query = database.insert({nome :"Mists of noyah",preco:25}).into("games").the
 }).catch(err => {
   console.log(err)
 });
+*/
+
+/*
+database.whereILike('nome', "%m")
+  .table("games")
+    .then(data => {
+  console.log(data)
+}).catch(err => {
+  console.log(err)
+});
+*/
+
+/*
+database.raw("select * from games").then(data=>{
+  console.log(data)
+}).catch(err=>{
+  console.log(err)
+})
+
+*/
