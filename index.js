@@ -51,6 +51,7 @@ database.whereILike('nome', "%m")
 */
 
 /*
+query raw
 database.raw("select * from games").then(data=>{
   console.log(data)
 }).catch(err=>{
@@ -58,3 +59,11 @@ database.raw("select * from games").then(data=>{
 })
 
 */
+database.where({nome:"Mists of noyah"})
+  .table("games")
+    .delete()
+      .then(data=>{
+        console.log(data)
+      }).catch(err=>{
+        console.log(err)
+      })
