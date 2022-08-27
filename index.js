@@ -14,12 +14,13 @@ let dados = [
    preco:120
   }
 ]
-let query = database.insert(dados).into("games").then(data => {
+ database.insert([{nome:"WOW",preco:120}]).into("games").then(data => {
   console.log(data)
 }).catch(err => {
   console.log(err)
 });
 */
+
 /*
 database.select(["id","preco"]).table("games").then(data => {
   console.log(data)
@@ -59,7 +60,8 @@ database.raw("select * from games").then(data=>{
 })
 
 */
-database.where({nome:"Mists of noyah"})
+/*
+database.whereIn("id",[18])
   .table("games")
     .delete()
       .then(data=>{
@@ -67,3 +69,12 @@ database.where({nome:"Mists of noyah"})
       }).catch(err=>{
         console.log(err)
       })
+*/
+
+/*
+database.where({nome:"WOW"}).update({preco:35}).table("games").then(data=>{
+  console.log(data);
+}).catch(err=>{
+  console.log(err)
+})
+*/
