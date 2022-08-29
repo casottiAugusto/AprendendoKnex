@@ -95,3 +95,20 @@ database.insert({
   console.log(err)
 })
 */
+async function TestTransation() {
+  try {
+    await database.transaction(async trans=>{
+      await database.insert({nome:"CD Project"}).table("estudio");
+      await database.insert({nome:"pyxeralia"}).table("estudio");
+      await database.insert({nome:"Mojang"}).table("estudio");
+      await database.insert({nome:"GearBox"}).table("estudio");
+      
+  
+    })
+    
+  } catch (err) {
+    console.log(err)
+    
+  }
+}
+TestTransation();
