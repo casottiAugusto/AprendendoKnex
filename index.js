@@ -78,9 +78,20 @@ database.where({nome:"WOW"}).update({preco:35}).table("games").then(data=>{
   console.log(err)
 })
 */
-
-database.select().table("games").orderBy("preco","asc").then (data=>{
+/*
+database.select().table("games").orderBy("nome","asc").then (data=>{
 console.log(data)
 }).catch(err=>{
 console.log(err)
 });
+*/
+/*
+database.insert({
+  nome:"Blizzard",
+  game_id:19
+}).table('estudio').then(data=>{
+  console.log(data);
+}).catch(err=>{
+  console.log(err)
+})
+*/
